@@ -14,8 +14,8 @@ import java.io.PrintWriter;
  * 〈〉
  */
 //继承httpServlet就能用里面的方法
-@WebServlet(name = "userServlet",urlPatterns = {"/userServlet/user1","/userServlet/user2"})
-public class UserServlet extends HttpServlet {
+@WebServlet(name = "testServlet",urlPatterns = {"/test"})
+public class TestServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -39,8 +39,6 @@ public class UserServlet extends HttpServlet {
         System.out.println(url);
 
         servletContext.setAttribute("appInfo","xxx.com info");
-
-        //方法不要调用错了，不然出不了想要的数据
         String appInfo = (String)servletContext.getAttribute("appInfo");
         System.out.println(appInfo);
     }
